@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Hero from '@/components/hero';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <title>Tickety</title>
         <meta name="description" content="Tickety App" />
       </Head>
-      </div>
+      <Hero/>
+    </div>
   )
 }

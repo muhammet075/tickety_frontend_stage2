@@ -1,0 +1,75 @@
+.hero{
+    background-image: url("/img/herobackground.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 25px;
+    max-width: 1300px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding: 15px;
+    color: #ffff;
+}
+
+.hero h1{
+    color: #ffff;
+    font-weight: bold;
+    font-size: 4.3em;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+}
+
+.hero h1 span{
+    color: #1E9AB0;
+}
+
+.hero p{
+    max-width: 340px;
+    text-align: center;
+    margin-bottom: 25px; 
+}
+
+.hero section:nth-of-type(1) a{
+    display: block;
+    background: linear-gradient(275.76deg, #1EC4CB 25.52%, #199EBF 96.82%);
+    border-radius: 100px;
+    padding: 20px 30px;
+    font-weight: bold;
+    color: #ffff;
+    text-decoration: none;
+}
+
+.hero section:nth-of-type(2){
+    margin-top: 50px;
+} 
+
+.hero section:nth-of-type(2) a{
+    color: #ffff;
+    margin: 0 25px;
+    position: relative;
+}
+
+.hero section:nth-of-type(2) a img{
+    position: absolute;
+    right: -30px;
+}
+
+.hero section:nth-of-type(3){
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
+    text-align: center;
+} 
+
+.hero section:nth-of-type(3) ul{
+    list-style: none;
+}
+
+.hero section:nth-of-type(3) ul li{
+    margin: 15px 0;
+}
