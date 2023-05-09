@@ -1,0 +1,60 @@
+.header{
+    background-color: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.header > div{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > div section{
+    width: 33%;
+    display: flex;
+}
+
+.header > div section:nth-of-type(1){
+    justify-content: flex-start;
+}
+
+.header > div section:nth-of-type(2){
+    justify-content: center;
+}
+
+.header > div section:nth-of-type(3){
+    justify-content: flex-end;
+}
+
+.header > div section ul{
+    display: flex;
+    list-style: none;
+}
+
+.header > div section ul li a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header > div section ul li a:hover{
+    color: #1E9AB0;
+    transition: 0.2s;
+}
+
+.header > div section:nth-of-type(1) ul li{
+    margin-right: 30px;
+}
+
+.header > div section:nth-of-type(2) img{
+    width: 100px;
+    height: auto;
+}
+
+.header > div section:nth-of-type(3) ul li{
+    margin-left: 30px;
+}
