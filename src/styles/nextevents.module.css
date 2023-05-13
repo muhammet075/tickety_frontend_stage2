@@ -1,0 +1,106 @@
+.nextevents{
+    width: 100%;
+    margin: 150px auto;
+}
+
+.nextevents > div{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.nextevents > div section:nth-of-type(1) p:nth-of-type(1){
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.nextevents > div section:nth-of-type(1) p:nth-of-type(2){
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #919299;
+    max-width: 270px;
+    margin: -5px auto 0 auto;
+}
+
+.nextevents > div section:nth-of-type(1) h2{
+    font-size: 4.5em;
+}
+
+
+.nextevents > div section:nth-of-type(2){
+    position: relative;
+}
+
+.nextevents > div section:nth-of-type(2) div{
+    max-width: 1000px;
+    height: 600px;
+    border: 1px solid #efefef;
+    border-radius: 30px;
+    background: url("/img/nexteventsbackground1.png");
+    background-size: cover;
+    margin: 75px auto 0 auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1){
+    position: relative;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section{
+    position: absolute;
+    color: #ffff;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section img{
+    width: 65px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section p:nth-of-type(1), .nextevents > div section:nth-of-type(2) div:nth-of-type(1) section p:nth-of-type(2), .nextevents > div section:nth-of-type(2) div:nth-of-type(1) section p:nth-of-type(3){
+    color: #ffff;    
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section h3{
+    font-size: 2em;
+    margin-bottom: 35px;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section h3 span{
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(1) section a{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background: #199EBF;
+    color: #ffff;
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 25px;
+}
+
+.nextevents > div section:nth-of-type(2) div:nth-of-type(2){
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(6deg);
+    background: url("/img/nexteventsbackground2.png");
+    background-size: cover;
+}

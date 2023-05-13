@@ -1,0 +1,144 @@
+.ticketscontainer{
+    width: 100%;
+    margin: 75px auto;
+}
+
+.ticketscontainer > div{
+    max-width: 1300px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+}
+
+.ticketscontainer > div > section{
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 400px;
+    height: fit-content;
+}
+
+.ticketscontainer > div > section h2{
+    font-size: 6em;
+}
+
+.ticketscontainer > div > section p:nth-of-type(1){
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.ticketscontainer > div > section p:nth-of-type(2){
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #919299;
+    max-width: 280px;
+    margin: -5px auto 0 auto;
+}
+
+
+.ticketscontainer > div a{
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 280px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 26px -6px 28px 25px rgba(0, 0, 0, 0.4) inset, 0px 0px 10px -11px rgba(0, 0, 0, 0.9) inset;
+}
+
+.ticketscontainer > div a:nth-of-type(1){
+    background: url("/img/nbaticketbackground.png");
+    background-size: cover;
+}
+
+.ticketscontainer > div a:nth-of-type(2){
+    background: url("/img/mlbticketbackground.png");
+    background-size: cover;
+}
+
+.ticketscontainer > div a:nth-of-type(3){
+    background: url("/img/nhlticketbackground.png");
+    background-size: cover;
+}
+
+.ticketscontainer > div a:nth-of-type(4){
+    background: url("/img/formulaeticketbackground.png");
+    background-size: cover;
+}
+
+.ticketscontainer > div a:nth-of-type(5){
+    background: url("/img/formula1ticketbackground.png");
+    background-size: cover;
+}
+
+.ticketscontainer > div a section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ticketscontainer > div a section div{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.ticketscontainer > div a section div h3{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.ticketscontainer > div a section div p:nth-of-type(1){
+    font-size: 0.7em;
+    font-weight: 200;
+    color: #ffff;
+    margin-bottom: 10px;
+}
+
+.ticketscontainer > div a section div p:nth-of-type(2){
+    font-size: 0.7em;
+    font-weight: 200;
+    color: #ffff;
+    margin-top: 5px;    
+}
+
+.ticketscontainer > div a section img{
+    width: 20px;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+} 
+
+.ticketscontainer > div a:nth-of-type(1){
+    top: 75px;
+    left: 50px;
+}
+
+.ticketscontainer > div a:nth-of-type(2){
+    top: 25px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.ticketscontainer > div a:nth-of-type(3){
+    top: 50px;
+    right: 100px;
+}
+
+.ticketscontainer > div a:nth-of-type(4){
+    bottom: 0;
+    left: 100px;
+}
+
+.ticketscontainer > div a:nth-of-type(5){
+    bottom: 25px;
+    right: 50px;
+}
