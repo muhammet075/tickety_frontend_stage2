@@ -1,0 +1,132 @@
+.eventsschedule{
+    width: 100%;
+    margin: 0px auto;
+}
+
+.eventsschedule > div{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.eventsschedule > div section:nth-of-type(1) h2{
+    font-size: 4.5em;
+    max-width: 800px;
+    margin: auto;
+}
+
+.eventsschedule > div section:nth-of-type(1) p:nth-of-type(1){
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.eventsschedule > div section:nth-of-type(1) p:nth-of-type(2){
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #919299;
+    max-width: 450px;
+    margin: 20px auto 25px auto;   
+}
+
+.eventsschedule > div section:nth-of-type(1) > a{
+    border: 1px solid #919299;
+    padding: 20px 40px;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 25px auto;
+    text-decoration: none;
+    font-weight: 500;
+    color: #323232;
+    border-radius: 50px;
+}
+
+.eventsschedule > div section:nth-of-type(1) div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.eventsschedule > div section:nth-of-type(1) div a{
+    border: 1px solid #919299;
+    padding: 15px 30px;
+    display: block;
+    font-size: 0.8em;
+    width: fit-content;
+    margin: 0 5px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #747474;
+    border-radius: 50px;
+}
+
+.eventsschedule > div section:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 50px;  
+}
+
+.eventsschedule > div section:nth-of-type(2) div{
+    border: 1px solid #919299;
+    width: 250px;
+    height: 300px;
+    border-radius: 30px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.eventsschedule > div section:nth-of-type(2) div img{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.eventsschedule > div section:nth-of-type(2) div h3{
+    margin: 100px 0 15px 0;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.eventsschedule > div section:nth-of-type(2) div p:nth-of-type(1){
+    font-size: 0.8em;
+    color: #919299;
+    margin-bottom: 15px;
+}
+
+.eventsschedule > div section:nth-of-type(2) div p:nth-of-type(2){
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.eventsschedule > div section:nth-of-type(2) div a{
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: #199EBF;
+    color: #ffff;
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 25px;
+}
+
+.eventsschedule > div section:nth-of-type(2) > a{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8em;
+    font-weight: 500;
+}

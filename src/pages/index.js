@@ -3,6 +3,8 @@ import Hero from '@/components/hero';
 import Partners from "@/components/partners";
 import Ticketscontainer from '@/components/ticketscontainer';
 import NextEvents from '@/components/nextevents';
+import EventsSchedule from '@/components/eventsschedule';
+import Countings from '@/components/countings';
 
 export default function Home() {
   return (
@@ -11,10 +13,12 @@ export default function Home() {
         <title>Tickety</title>
         <meta name='description' content='Tickety App' />
       </Head>
-      <Hero />
-      <Partners />
-      <Ticketscontainer />
-      <NextEvents />
+      <Hero/>
+      <Partners/>
+      <Ticketscontainer/>
+      <NextEvents/>
+      <EventsSchedule/>
+      <Countings/>
     </div>
   );
 }
