@@ -14,8 +14,8 @@ export default function Home() {
         <meta name='description' content='Tickety App' />
       </Head>
       <Hero/>
-      {/* <Partners/>
-      <Ticketscontainer/>
+      <Partners/>
+      {/* <Ticketscontainer/>
       <NextEvents/>
       <EventsSchedule/>
       <Countings/> */}
