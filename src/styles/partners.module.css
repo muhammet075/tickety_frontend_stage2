@@ -6,7 +6,6 @@
 .partners > div{
     max-width: 1100px;
     margin: 0 auto;
-    padding: 15px;
     text-align: center;
 }
 
@@ -26,4 +25,69 @@
 .partners > div section img{
     width: 100px;
     height: auto;
+}
+
+@media only screen and (max-width: 1115px) {
+    .partners > div{
+        padding: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    .partners > div h2{
+        font-size: 2.2em;
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .partners{
+        margin: 50px auto;
+    }
+
+    .partners > div h2{
+        font-size: 2em;
+        max-width: 100%;
+    }
+
+    .partners > div section{
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+     .partners > div section img{
+        display: inline-block;
+        height: 50px;
+        width: auto;
+        margin: 50px 15px 50px 0;
+    }
+
+    .partners > div section::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .partners > div section::-webkit-scrollbar:horizontal {
+        height: 12px;
+    }
+
+    .partners > div section::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 10px;
+        border: 2px solid #ffffff;
+    }
+
+    .partners > div section::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+}
+
+@media only screen and (max-width: 495px) {
+    .partners > div h2{
+        font-size: 1.8em;
+    }  
 }
