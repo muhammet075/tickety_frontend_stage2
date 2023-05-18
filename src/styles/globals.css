@@ -43,3 +43,11 @@ html, body {
         left: -1000px
     }
 }
+
+
+
+@media only screen and (max-width: 810px) {
+  main{
+    margin-top: 100px;
+  }
+}
