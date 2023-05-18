@@ -35,7 +35,7 @@ function Header() {
       .classList.remove("displaynone");
     setTimeout(function () {
       document.querySelector(".ticketylogo").classList.add("displaynone");
-    }, 500);
+    }, 550);
   }
 
   function closeHamburger() {
@@ -45,7 +45,7 @@ function Header() {
     document.querySelector(".closehamburgermenu").classList.add("displaynone");
     setTimeout(function () {
       document.querySelector(".ticketylogo").classList.remove("displaynone");
-    }, 250);
+    }, 100);
   }
 
   return (
