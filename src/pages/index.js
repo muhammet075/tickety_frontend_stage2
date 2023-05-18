@@ -15,8 +15,8 @@ export default function Home() {
       </Head>
       <Hero/>
       <Partners/>
-      {/* <Ticketscontainer/>
-      <NextEvents/>
+      <Ticketscontainer/>
+      {/* <NextEvents/>
       <EventsSchedule/>
       <Countings/> */}
     </div>

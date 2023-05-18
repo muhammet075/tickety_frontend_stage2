@@ -12,7 +12,7 @@ function Ticketscontainer() {
         <section>
             <p>Categories</p>
             <h2>Tickets</h2>
-            <p>Choose the sports show and guarantee your ticket to see the best athletes in the world.</p>
+            <p>Choose the sports show and guarantee your<br/> ticket to see the best athletes in the world.</p>
         </section>
 
         <Link href='/'>
