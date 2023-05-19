@@ -25,12 +25,18 @@ function Findtickethero() {
   function searchTickets() {
 
     const teamApiName = document.querySelector(".teamtype").value;
+
+    sessionStorage.setItem("teamname", teamApiName);
+
     let apiLink;
 
-    if (teamApiName === "arizonacardinals"){
+
+    if (teamApiName === "arizonacardinals") {
       apiLink = process.env.NEXT_PUBLIC_ARIZONACARDINALS;
     } else if (teamApiName === "atlantafalcons") {
       apiLink = process.env.NEXT_PUBLIC_ATLANTAFALCONS;
+    } else if (teamApiName === "baltimoreravens") {
+      apiLink = process.env.NEXT_PUBLIC_BALTIMORERAVENS;
     }
 
     async function getData() {
@@ -64,23 +70,67 @@ function Findtickethero() {
       const storedEvents = JSON.parse(sessionStorage.getItem("events"));
 
       console.log(storedEvents);
-      const backgroundcss = storedEvents[0].team_name.replace(/\s/g, "").toLowerCase() + "-background";
 
       console.log("storedEvents", storedEvents);
 
       let html = "";
 
       for (let i = 0; i < Math.min(storedEvents.length, 7); i++) {
+
+      let randomSection;
+
+      const teamName = sessionStorage.getItem("teamname");
+
+      if (teamName === "baltimoreravens"){ 
+        const randomNumber = Math.floor(Math.random() * 3);
+        if (randomNumber === 0) {
+          randomSection = String(Math.floor(Math.random() * 54) + 500);
+        } else if (randomNumber === 1) {
+          randomSection = String(Math.floor(Math.random() * 54) + 200);
+        } else {
+          randomSection = String(Math.floor(Math.random() * 54) + 100);
+        }
+
+      } else if (teamName === "atlantafalcons"){
+      const randomNumber = Math.floor(Math.random() * 3);
+      if (randomNumber === 0) {
+        randomSection = String(Math.floor(Math.random() * 50) + 301);
+      } else if (randomNumber === 1) {
+        randomSection = String(Math.floor(Math.random() * 47) + 201);
+      } else {
+        randomSection = String(Math.floor(Math.random() * 36) + 101);
+      }
+
+      } else if (teamName === "arizonacardinals"){
+      const randomNumber = Math.floor(Math.random() * 2);
+      if (randomNumber === 0) {
+        randomSection = String(Math.floor(Math.random() * 48) + 201);
+      } else {
+        randomSection = String(Math.floor(Math.random() * 26) + 119);
+      }
+      }
+  
+      const randomRow = String(Math.floor(Math.random() * 20) + 1).padStart(2, '0');
+      const randomSeats = String(Math.floor(Math.random() * 18) + 1).padStart(2, '0');
+      const randomSeatsSecond = String(Number(randomSeats) + 1).padStart(2, "0");
+      const randomPrice = Math.floor(Math.random() * 1026) + 175; // Genereer een willekeurig nummer tussen 175 en 1200
+
+      let priceRatio = randomPrice / parseInt(randomSection); // Prijsverhouding
+
         html += `
-              <div class="card ${backgroundcss}">
-                <p>${storedEvents[i].date} ${storedEvents[i].time}</p>
-                <p>${storedEvents[i].location}</p>
-                <p>${storedEvents[i].team_name}</p>
-                <h2>${storedEvents[i].event_name}</h2>
-                <p>From $54</p>
-                <button type="button" onclick="alert('test')">Buy</button>
-              </div>
-              `;
+          <div class="card">
+            <p>${storedEvents[i].date} ${storedEvents[i].time}</p>
+            <p>${storedEvents[i].location}</p>
+            <p>${storedEvents[i].team_name}</p>
+            <h2>${storedEvents[i].event_name}</h2>
+            <p>Section: <span class="sectionnumber">${randomSection}</span></p>
+            <p>Row: ${randomRow}</span></p>
+            <p>Seat: ${randomSeats} and ${randomSeatsSecond}</p>
+            <br/>
+            <p>$ ${randomPrice}.00</p>
+            <button type="button" onclick="alert('test')">Buy</button>
+          </div>
+        `;
         html += "";
         document.querySelector(".ticketresults").classList.remove("displaynone");
         document.querySelector(".herosocials").classList.add("displaynone");
@@ -90,10 +140,26 @@ function Findtickethero() {
 
       }
       loopTickets();
+      putSectionBackgrounds();
     }, 500);
 
   }
 
+  function putSectionBackgrounds(){
+
+    let sectionNumbers = document.querySelectorAll(".sectionnumber");
+    let rowNumbers = document.querySelectorAll(".rownumber");
+    const teamName = sessionStorage.getItem("teamname");
+
+    for (let i = 0; i < sectionNumbers.length; i++) {
+      console.log(sectionNumbers[i].parentElement.parentElement);
+      let backgroundUrl = 'url("/nfl-seat-backgrounds/' + teamName + '/section_section-' +  sectionNumbers[i].innerHTML + '.jpg")';
+
+      sectionNumbers[i].parentElement.parentElement.style.backgroundImage = backgroundUrl;
+      
+    }
+
+  };
 
   function resetData(){
     sessionStorage.removeItem("events");
