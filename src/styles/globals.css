@@ -16,6 +16,11 @@ html, body {
   overflow: hidden !important;
 }
 
+.nobackgroundimage{
+   background-image: none !important;
+   background: none !important;
+}
+
 .openhamburger{
     animation: 1s forwards openhamburger;
 }
@@ -45,9 +50,177 @@ html, body {
 }
 
 
-
 @media only screen and (max-width: 810px) {
   main{
     margin-top: 100px;
   }
+}
+
+
+.arizonacardinals-background{
+    background-image: url("/nfl-backgrounds/arizonacardinals.jpeg") !important;
+}
+
+.atlantafalcons-background{
+    background-image: url("/nfl-backgrounds/atlantafalcons.webp") !important;
+}
+
+.newyorkjets-background{
+    background-image: url("/nfl-backgrounds/newyorkjets.jpeg") !important;
+}
+
+.bostonbruins-background{
+    background-image: url("/nfl-backgrounds/newyorkjets.jpeg") !important;
+}
+
+
+
+
+.cards-box {
+	position: relative;
+	transform: translateX(-15px);
+  width: 100%;
+  height: 100%;
+}
+
+
+.cards-box .card {
+	width: 85%;
+  height: 65%;
+	background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #ffff;
+	border-radius: 25px;
+	cursor: pointer;
+  color: #000;
+}
+
+.cards-box .card::before{
+  content: "";
+  background-color: #00000063;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+  z-index: -99999;
+}
+
+.cards-box .card.hide {
+	visibility: hidden;
+}
+
+.cards-box .card:not(.hide) {
+	position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+	transition: all 0.8s cubic-bezier(0.18, 0.98, 0.45, 1);
+  color: #ffff;
+  border: 1px solid #efefef;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.cards-box .card:not(.hide)[data-slide='0'] {
+	transform: translate(0px, 0px) scale(1);
+	z-index: 8;
+}
+
+.cards-box .card:not(.hide)[data-slide='1'] {
+  transform: rotate(2deg);
+  z-index: 7;
+}
+
+.cards-box .card:not(.hide)[data-slide='2'] {
+  transform: rotate(4deg);
+	z-index: 6;
+}
+
+.cards-box .card:not(.hide)[data-slide='3'] {
+  transform: rotate(6deg);
+	z-index: 5;
+}
+
+.cards-box .card:not(.hide)[data-slide='4'] {
+  transform: rotate(8deg);
+	z-index: 4;
+}
+
+.cards-box .card:not(.hide)[data-slide='5'] {
+  transform: rotate(10deg);
+	z-index: 3;
+}
+
+.cards-box .card:not(.hide)[data-slide='6'] {
+  transform: rotate(12deg);
+	z-index: 2;
+}
+
+.cards-box .card:not(.hide)[data-slide='7'] {
+  transform: rotate(14deg);
+	z-index: 1;
+}
+
+.cards-box .card:not(.hide)[data-slide='0'] {
+	transition: all 0.32s cubic-bezier(0.18, 0.98, 0.45, 1);
+}
+
+.cards-box .card:not(.hide) p:first-child, .cards-box .card:not(.hide) p:nth-of-type(2){
+  color: #ffff;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 10px;  
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-box .card:not(.hide) p:nth-of-type(3){
+  margin: 25px 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-box .card:not(.hide) h2{
+  font-size: 1.6em;
+  max-width: 50%;
+  text-align: center;
+  margin-bottom: 15px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-box .card:not(.hide) p:nth-of-type(4){
+  color: #ffff;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin: 25px 0 10px 0;  
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-box .card:not(.hide) button{
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0;
+    background: #199EBF;
+    border: none;
+    color: #ffff;
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 25px;
 }

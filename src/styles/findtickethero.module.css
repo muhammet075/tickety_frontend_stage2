@@ -1,0 +1,118 @@
+.findtickethero{
+    background-image: url("/img/herobackground.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 25px;
+    max-width: 1300px;
+    min-height: 80vh;
+    margin: 25px auto 200px auto;
+    padding: 15px;
+    color: #ffff;
+}
+
+.findtickethero > section:first-child div{
+    position: relative;
+}
+
+.findtickethero > section:first-child div input{
+    width: 500px;
+    padding: 20px 20px 20px 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ffff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.findtickethero > section:first-child div img{
+    position: absolute;
+    width: 25px;
+    height: auto;
+    left: 10px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.findtickethero > section:first-child div button{
+    display: block;
+    width: 200px;
+    margin: 25px auto 0 auto;
+    background-color: #1e9ab0;
+    border: none;
+    color: #ffff;
+    border-radius: 20px;
+    padding: 15px 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.findtickethero > section:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+.findtickethero > section:last-child{
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
+    text-align: center;
+} 
+
+.findtickethero > section:last-child ul{
+    list-style: none;
+}
+
+.findtickethero > section:last-child ul li{
+    margin: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1300px) {
+    .findtickethero{
+        border-radius: 0px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+}
+
+
+@media only screen and (max-width: 680px) {
+    .findtickethero{
+        background-size: cover;
+    }
+
+    .findtickethero section:last-child{
+        display: none;
+    }
+}

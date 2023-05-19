@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '@/components/hero';
+import Findtickethero from "@/components/findtickethero";
 import Partners from "@/components/partners";
 import Ticketscontainer from '@/components/ticketscontainer';
 import NextEvents from '@/components/nextevents';
@@ -13,10 +14,11 @@ export default function Home() {
         <title>Tickety</title>
         <meta name='description' content='Tickety App' />
       </Head>
-      <Hero/>
+      <Findtickethero />
+      {/* <Hero/>
       <Partners/>
       <Ticketscontainer/>
-      {/* <NextEvents/>
+      <NextEvents/>
       <EventsSchedule/>
       <Countings/> */}
     </div>
