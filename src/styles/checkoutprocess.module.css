@@ -1,4 +1,46 @@
 .checkoutprocess > div{
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 50px auto 150px auto;
+}
+
+.checkoutprocess > div section:nth-of-type(1) h1{
+    font-size: 3em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.checkoutprocess > div section:nth-of-type(1) h1 img{
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkoutprocess > div section:nth-of-type(1) p{
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1115px) {
+    .checkoutprocess > div{
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .checkoutprocess > div h1{
+        text-align: center;
+        justify-content: center;
+    }
+
+    .checkoutprocess > div section:nth-of-type(1) p{
+        text-align: center;
+        margin: auto auto 25px auto;
+        max-width: 60%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .checkoutprocess > div section:nth-of-type(1) p{
+        max-width: 90%;
+    }
 }

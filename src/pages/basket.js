@@ -2,10 +2,10 @@ import Head from "next/head";
 import Checkoutprocess from "@/components/checkoutprocess";
 
 
-export default function Checkout() {
+export default function Basket() {
   return (
-    <div>   
-        <Checkoutprocess/>
+    <div>
+      <Checkoutprocess />
     </div>
   );
 }

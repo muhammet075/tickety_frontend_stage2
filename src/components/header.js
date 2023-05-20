@@ -6,6 +6,7 @@ import teams from "../../public/teams";
 import Logo from "../assets/img/logo.png";
 import resetIco from "../assets/icons/reset.svg";
 import userIco from "../assets/icons/signin.svg";
+import basketIco from "../assets/icons/basket.svg";
 import languageIco from "../assets/icons/language.svg";
 import hamburgerIco from "../assets/icons/hamburger.svg";
 import closeIco from "../assets/icons/white-close.svg";
@@ -20,12 +21,12 @@ function Header() {
 
   function checkScreenWidth() {
     let currentWindowWidth = window.innerWidth;
-    if (currentWindowWidth > 550 && !isScreenWide) {
+    if (currentWindowWidth > 750 && !isScreenWide) {
       isScreenWide = true;
       document.querySelector(".hamburger").style.display = "block";
       document.querySelector(".hamburgermenu").classList.remove("closehamburger");
       document.querySelector(".hamburgermenu").classList.remove("openhamburger");
-    } else if (currentWindowWidth <= 550 && isScreenWide) {
+    } else if (currentWindowWidth <= 750 && isScreenWide) {
       isScreenWide = false;
       document.querySelector(".hamburger").style.display = "none";
     }
@@ -80,7 +81,7 @@ function Header() {
   function resetData() {
     sessionStorage.removeItem("events");
     sessionStorage.removeItem("savedEvent");
-    location.reload();
+    window.location = "/"
   }
 
   return (
@@ -107,7 +108,7 @@ function Header() {
         </section>
 
         <section className="resetdatasection displaynone">
-          <button onClick={resetData}><Image src={resetIco} alt="Reset Icon"/> Reset</button>
+          <button onClick={resetData}><Image src={resetIco} alt="Reset Icon"/> <span>Reset</span></button>
         </section>
 
         <section>
@@ -118,6 +119,7 @@ function Header() {
 
         <section className="hamburger">
           <div className="hamburgermenu">
+            <Link href="/basket"><Image src={basketIco} alt="Basket icon"/> Basket</Link>
             <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
             <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
           </div>

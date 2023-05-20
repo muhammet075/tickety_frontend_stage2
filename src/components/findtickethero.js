@@ -66,9 +66,7 @@ function Findtickethero() {
 
   function createTickets() {
     setTimeout(function () {
-      document
-        .querySelector(".resetdatasection")
-        .classList.remove("displaynone");
+      document.querySelector(".resetdatasection").classList.remove("displaynone");
       document.querySelector(".filterdatasection").classList.add("displaynone");
       document.querySelector(".searchcontainer").classList.add("displaynone");
       document.querySelector(".headercontent").classList.add("resetheader");
@@ -228,8 +226,8 @@ function Findtickethero() {
 
             const savedEventJSON = JSON.stringify(savedEvent);
             sessionStorage.setItem("savedEvent", savedEventJSON);
-            
-            window.location = "/checkout";
+
+            window.location = "/basket";
           });
         }
       }
