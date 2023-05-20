@@ -127,7 +127,7 @@ function Findtickethero() {
             <p>Row: ${randomRow}</span></p>
             <p>Seat: ${randomSeats} and ${randomSeatsSecond}</p>
             <br/>
-            <p>$ ${randomPrice}.00</p>
+            <p>$ ${randomPrice}.00 </p>
             <button type="button" onclick="alert('test')">Buy</button>
           </div>
         `;
