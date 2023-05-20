@@ -98,9 +98,7 @@ function Header() {
   }
 
   function navigateHamburger(){
-    // document.querySelector(".hamburger").style.display = "none";
-    document.querySelector(".hamburgermenu").classList.add("closehamburger");
-    document.querySelector(".hamburgermenu").classList.remove("openhamburger");
+
   }
 
   return (
@@ -142,7 +140,7 @@ function Header() {
             <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
             <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
           </div>
-          <div onClick={closeHamburger}>
+          <div className="closinghamburger" onClick={closeHamburger}>
             <div>
               <Image src={closeIco} alt="Close Icon"/>
             </div>
