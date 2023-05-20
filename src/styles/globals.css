@@ -398,3 +398,61 @@ html, body {
 	transition: all 0.32s cubic-bezier(0.18, 0.98, 0.45, 1);
 }
 
+
+.changeticketsview{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    background: #000000cf;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    gap: 30px;
+    overflow-x: scroll;
+    padding: 100px 0;
+}
+
+.changeticketsview .card:not(.hide)[data-slide='0'],.changeticketsview .card:not(.hide)[data-slide='1'],.changeticketsview .card:not(.hide)[data-slide='2'],.changeticketsview .card:not(.hide)[data-slide='3'],.changeticketsview .card:not(.hide)[data-slide='4'],.changeticketsview .card:not(.hide)[data-slide='5'],.changeticketsview .card:not(.hide)[data-slide='6'],.changeticketsview .card:not(.hide)[data-slide='7'] {
+  transform: rotate(0deg);
+	z-index: 1;
+  cursor: default;
+  position: static;
+  border: 1px solid #5f5f5f;
+}
+
+.closechangedview{
+  position: fixed;
+  z-index: 99999;
+  background: none;
+  border: none;
+  top: 25px;
+  right: 25px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.closechangedview img{
+  width: 25px;
+  height: auto;
+  margin: 0;
+}
+
+.changeticketviesbtn{
+  background: none;
+  border: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  z-index: 9999;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #0080da;
+  background: none !important;
+}

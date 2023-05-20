@@ -9,6 +9,7 @@ import twitterIco from "../assets/icons/twitter.svg";
 import searchIco from "../assets/icons/search.svg";
 import leftIco from "../assets/icons/white-left.svg";
 import rightIco from "../assets/icons/white-right.svg";
+import closeIco from "../assets/icons/white-close.svg";
 
 function Findtickethero() {
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -287,7 +288,20 @@ function Findtickethero() {
       });
     }
 
-  
+    function changeTicketsViews(){
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector(".cards-box").classList.add("changeticketsview");
+      document.querySelector(".changeticketviesbtn").classList.add("displaynone");
+      document.querySelector(".buttonsnavigation").classList.add("displaynone");
+      document.querySelector(".closechangedview").classList.remove("displaynone"); 
+    }
+
+  function closeChangedView(){
+      document.querySelector(".cards-box").classList.remove("changeticketsview");
+      document.querySelector(".changeticketviesbtn").classList.remove("displaynone");
+      document.querySelector(".buttonsnavigation").classList.remove("displaynone");  
+      document.querySelector(".closechangedview").classList.add("displaynone"); 
+  }
 
   return (
     <div className={styles.findtickethero + " ticketshero"}>
@@ -306,10 +320,12 @@ function Findtickethero() {
       </section>
 
       <section className='ticketresults displaynone'>
+        
+        <button onClick={closeChangedView} className="closechangedview displaynone"><Image src={closeIco} alt="Close Icon"/></button>
         <div class='cards-box'></div>
-
-        <div>
+        <div className="buttonsnavigation">
           <button onClick={nextTickets} className='next-button'><Image src={leftIco} alt="Left icon"/></button>
+          <button onClick={changeTicketsViews} className="changeticketviesbtn">8 Events</button>
           <button onClick={prevTickets} className='prev-button'><Image src={rightIco} alt="Right icon"/></button>
         </div>
       </section>

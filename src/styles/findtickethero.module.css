@@ -75,6 +75,7 @@
 .findtickethero > section:nth-of-type(2) > div:nth-of-type(2){
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
     bottom: 0px;
     width: 100%;
