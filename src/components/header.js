@@ -119,9 +119,9 @@ function Header() {
 
         <section className="hamburger">
           <div className="hamburgermenu">
-            <Link href="/basket"><Image src={basketIco} alt="Basket icon"/> Basket</Link>
-            <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
-            <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
+            <Link href="/basket" onClick={closeHamburger}><Image src={basketIco} alt="Basket icon"/> Basket</Link>
+            <Link href="#" onClick={closeHamburger}><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
+            <Link href="#" onClick={closeHamburger}><Image src={languageIco} alt="Language icon"/> En</Link>
           </div>
           <div onClick={closeHamburger}>
             <div>
