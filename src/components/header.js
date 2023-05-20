@@ -2,14 +2,31 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/header.module.css";
-import Logo from "../assets/img/logo.png";
 import teams from "../../public/teams";
+import Logo from "../assets/img/logo.png";
 import resetIco from "../assets/icons/reset.svg";
+import userIco from "../assets/icons/signin.svg";
+import languageIco from "../assets/icons/language.svg";
+import hamburgerIco from "../assets/icons/hamburger.svg";
+import closeIco from "../assets/icons/white-close.svg";
 
 
 function Header() {
   useEffect(() => {
     checkEvent();
+
+    function checkScreenWidth() {
+      if (window.innerWidth > 550) {
+        document.querySelector(".hamburger").style.display = "block";
+        document.querySelector(".hamburgermenu").classList.remove("closehamburger");
+        document.querySelector(".hamburgermenu").classList.remove("openhamburger");
+      } else {
+       document.querySelector(".hamburger").style.display = "none";
+      }
+    }
+
+    window.addEventListener("resize", checkScreenWidth);
+    
   });
 
   function checkEvent(){
@@ -27,6 +44,24 @@ function Header() {
     } else {
       document.querySelector(".teamtype").innerHTML = "";
     }
+
+  }
+
+  function openHamburger(){
+    document.querySelector("body").classList.add("noscroll");
+    document.querySelector(".hamburger").style.display = "block";
+    document.querySelector(".hamburgermenu").classList.remove("closehamburger");
+    document.querySelector(".hamburgermenu").classList.add("openhamburger");
+  }
+
+  function closeHamburger(){
+    document.querySelector("body").classList.remove("noscroll");
+    document.querySelector(".hamburgermenu").classList.add("closehamburger");
+    document.querySelector(".hamburgermenu").classList.remove("openhamburger");  
+    
+    setTimeout(() => {
+      document.querySelector(".hamburger").style.display = "none";
+    }, 300);
 
   }
 
@@ -72,6 +107,20 @@ function Header() {
             <Image src={Logo} alt='Logo of Tickety' />
           </Link>
         </section>
+
+        <section className="hamburger">
+          <div className="hamburgermenu">
+            <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
+            <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
+          </div>
+          <div onClick={closeHamburger}>
+            <div>
+              <Image src={closeIco} alt="Close Icon"/>
+            </div>
+          </div>
+        </section>
+
+        <button onClick={openHamburger}><Image src={hamburgerIco} alt="Hamburger Menu Icon"/></button>
 
       </div>
     </header>

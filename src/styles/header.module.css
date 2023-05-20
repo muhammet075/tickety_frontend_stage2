@@ -14,6 +14,10 @@
     position: relative;
 }
 
+.header > div > button{
+    display: none;
+}
+
 .header > div > section:nth-of-type(1){
     display: flex;
 }
@@ -109,6 +113,34 @@
     height: auto;
 }
 
+.header > div > section:nth-of-type(4){
+    display: block;
+}
+
+.header > div > section:nth-of-type(4) div:nth-of-type(1){
+    display: flex;
+}
+
+.header > div > section:nth-of-type(4) div:nth-of-type(2){
+    display: none;
+}
+
+.header > div > section:nth-of-type(4) div:nth-of-type(1) a{
+    display: block;
+    position: relative;
+    margin-left: 25px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.header > div > section:nth-of-type(4) div:nth-of-type(1) a img{
+    height: 16px;
+    width: auto;
+    margin-bottom: -2px;
+}
+
+
 @media only screen and (max-width: 1200px) {
     .header > div{
         height: 200px;
@@ -119,11 +151,31 @@
     .header > div > section:nth-of-type(3){
         top: 20px
     }
+
+    .header > div > section:nth-of-type(4) div:nth-of-type(1){
+        position: absolute;
+        top: 70px;
+        right: 15px;
+    }
 }
 
 @media only screen and (max-width: 550px) {
     .header > div{
         height: 230px;
+    }
+
+    .header > div > button{
+        display: block;
+        background: none;
+        border: none;
+        position: absolute;
+        left: 15px;
+        top: 65px;
+    }
+
+    .header > div > button img{
+        width: 30px;
+        height: auto;
     }
     
      .header > div > section:nth-of-type(1){
@@ -141,4 +193,63 @@
      .header > div > section:nth-of-type(1) div{
         margin-bottom: -5px;
      }
+
+     .header > div > section:nth-of-type(4){
+        display: none;
+        position: fixed;
+        z-index: 9999999;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+     }
+
+    .header > div > section:nth-of-type(4) > div:nth-of-type(2){
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: #00000087;
+     }
+
+     .header > div > section:nth-of-type(4) > div:nth-of-type(2) > div{
+        position: absolute;
+        top: 25px;
+        right: 0;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+     }
+
+     .header > div > section:nth-of-type(4) > div:nth-of-type(2) > div img{
+        width: 25px;
+        height: auto;
+     }
+
+    .header > div > section:nth-of-type(4) > div:nth-of-type(1) a{
+        margin-left: 0;
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+
+    .header > div > section:nth-of-type(4) > div:nth-of-type(1) a img {
+        height: 20px;
+    }
+
+    .header > div > section:nth-of-type(4) > div:nth-of-type(1){
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: -1000px;
+        width: 70%;
+        height: 100%;
+        background: #ffff;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
 }
