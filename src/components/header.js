@@ -15,18 +15,26 @@ function Header() {
   useEffect(() => {
     checkEvent();
 
-    function checkScreenWidth() {
-      if (window.innerWidth > 550) {
-        document.querySelector(".hamburger").style.display = "block";
-        document.querySelector(".hamburgermenu").classList.remove("closehamburger");
-        document.querySelector(".hamburgermenu").classList.remove("openhamburger");
-      } else {
-       document.querySelector(".hamburger").style.display = "none";
-      }
-    }
+  let previousWindowWidth = window.innerWidth;
+  let isScreenWide = false;
 
-    window.addEventListener("resize", checkScreenWidth);
-    
+  function checkScreenWidth() {
+    let currentWindowWidth = window.innerWidth;
+    if (currentWindowWidth > 550 && !isScreenWide) {
+      isScreenWide = true;
+      document.querySelector(".hamburger").style.display = "block";
+      document.querySelector(".hamburgermenu").classList.remove("closehamburger");
+      document.querySelector(".hamburgermenu").classList.remove("openhamburger");
+    } else if (currentWindowWidth <= 550 && isScreenWide) {
+      isScreenWide = false;
+      document.querySelector(".hamburger").style.display = "none";
+    }
+    previousWindowWidth = currentWindowWidth;
+  }
+
+  window.addEventListener("resize", checkScreenWidth);
+
+
   });
 
   function checkEvent(){
