@@ -34,7 +34,6 @@ function Header() {
 
   window.addEventListener("resize", checkScreenWidth);
 
-
   });
 
   function checkEvent(){
