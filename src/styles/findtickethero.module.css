@@ -61,8 +61,6 @@
   transition: 0.3s;
 }
 
-
-
 .findtickethero > section:nth-of-type(2){
     position: absolute;
     top: 0;
@@ -73,6 +71,36 @@
     width: 100%;
     height: 100%;
 }
+
+.findtickethero > section:nth-of-type(2) > div:nth-of-type(2){
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.findtickethero > section:nth-of-type(2) > div:nth-of-type(2) button{
+    background-color: #199EBF;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.findtickethero > section:nth-of-type(2) > div:nth-of-type(2) button:hover{
+  background-color: #40cdf1;
+  transition: 0.3s;
+}
+
+.findtickethero > section:nth-of-type(2) > div:nth-of-type(2) button img{
+    width: 25px;
+    height: auto;
+}
+
+
+
 
 .findtickethero > section:last-child{
     position: absolute;
@@ -91,8 +119,6 @@
 
 
 
-
-
 @media only screen and (max-width: 1300px) {
     .findtickethero{
         border-radius: 0px;
@@ -103,6 +129,13 @@
      .findtickethero{
         margin-top: 25px !important;
         min-height: 50vh;
+        margin-bottom: 400px;
+     }
+}
+
+@media only screen and (max-width: 600px) {
+     .findtickethero{
+        margin-bottom: 100px;
      }
 }
 
