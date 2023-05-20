@@ -42,7 +42,7 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <div>
+      <div className="headercontent">
 
         <section className="filterdatasection">
           <select name='event' className='eventtype' onChange={checkEvent}>

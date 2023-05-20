@@ -63,6 +63,7 @@ function Findtickethero() {
       document.querySelector(".resetdatasection").classList.remove("displaynone");
       document.querySelector(".filterdatasection").classList.add("displaynone");
       document.querySelector(".searchcontainer").classList.add("displaynone");
+      document.querySelector(".headercontent").classList.add("resetheader");
       const storedEvents = JSON.parse(sessionStorage.getItem("events"));
 
       let html = "";
