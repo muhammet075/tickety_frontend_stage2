@@ -15,7 +15,7 @@ function Footer() {
             <h2>The most fantastic events for you first! <span>Sign up now!</span></h2>
             <p>By signing up, you acknowledge and accept our privacy policy and consent to receiving emails.</p>
             <div>
-                <input type="email" id="emailsignup"/>
+                <input type="email" id="emailsignup" placeholder="your@email.com"/>
                 <button id="emailsignupbtn">Join the list</button>
             </div>
         </section>

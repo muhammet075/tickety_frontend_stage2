@@ -5,7 +5,7 @@
 }
 
 html, body {
-  font-family: Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family: Montserrat, Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 .displaynone{
@@ -50,25 +50,24 @@ html, body {
 }
 
 
-@media only screen and (max-width: 810px) {
+/* @media only screen and (max-width: 810px) {
   main{
     margin-top: 120px;
   }
-}
+} */
 
 
 
 .cards-box {
 	position: relative;
-	transform: translateX(-15px);
-  width: 100%;
-  height: 100%;
+	/* transform: translateX(-15px); */
+  height: fit-content;
+  margin-top: 330px;
 }
 
-
 .cards-box .card {
-	width: 85%;
-  height: 65%;
+	width: 1000px;
+  height: 450px;
 	background-color: #000;
   background-repeat: no-repeat;
   background-position: center center;
@@ -104,14 +103,200 @@ html, body {
   color: #ffff;
   border: 1px solid #efefef;
 	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: e-resize;
+}
+
+.cards-box .card:not(.hide) > div{
+  text-align: center;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(1){
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(1) p{
+  font-weight: 300;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(1) h2{
+  margin-top: 60px;
+  font-size: 35px;
+  user-select: none;
+}
+
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(2){
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(2) p{
+  font-weight: 400;
+  margin-bottom: 5px;
+  user-select: none;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(2) p:nth-of-type(4){
+  font-weight: 700;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(2) button{
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 15px auto 0 auto;
+    background: #199EBF;
+    border: none;
+    color: #ffff;
+    text-decoration: none;
+    padding: 15px 75px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(2) button:hover{
+  background-color: #40cdf1;
+  transition: 0.3s;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .cards-box .card {
+    width: 80%;
+    height: 450px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) h2{
+    margin-top: 60px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .cards-box .card {
+    width: 80%;
+    height: 300px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1){
+    top: 15px
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) h2{
+    margin-top: 35px;
+    font-size: 20px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) p{
+    font-size: 12px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) p{
+    font-size: 12px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) p:nth-of-type(4){
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) button{
+    font-size: 12px;
+    padding: 10px 45px;
+  }
+
+  .ticketshero{
+    margin-top: -30px !important;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .ticketresults {
+    top: 100px !important;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .cards-box .card {
+    width: 90%;
+    height: 250px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) h2{
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) p{
+    font-size: 10px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) p{
+    font-size: 10px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) button, .cards-box .card:not(.hide) > div > section:nth-of-type(2) p:nth-of-type(4){
+    margin-top: 5px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) button{
+    font-size: 11px;
+    padding: 7px 25px;
+    border-radius: 40px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .cards-box {
+    margin-top: 100px;
+  }
+
+  .cards-box .card {
+    width: 90%;
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) h2{
+    font-size: 15px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(1) p{
+    margin-bottom: 5px;
+    font-size: 8px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) p{
+    font-size: 8px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) p:nth-of-type(4){
+    font-size: 10px;
+  }
+
+  .cards-box .card:not(.hide) > div > section:nth-of-type(2) button{
+    font-size: 10px;
+    padding: 5px 15px;
+  }
+
 }
 
 .cards-box .card:not(.hide)[data-slide='0'] {
@@ -156,56 +341,4 @@ html, body {
 
 .cards-box .card:not(.hide)[data-slide='0'] {
 	transition: all 0.32s cubic-bezier(0.18, 0.98, 0.45, 1);
-}
-
-.cards-box .card:not(.hide) p:first-child, .cards-box .card:not(.hide) p:nth-of-type(2){
-  color: #ffff;
-  font-size: 0.9em;
-  font-weight: 300;
-  margin-bottom: 10px;  
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-}
-
-.cards-box .card:not(.hide) p:nth-of-type(3){
-  margin: 25px 0;
-  font-size: 1.1em;
-  font-weight: 600;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-}
-
-.cards-box .card:not(.hide) h2{
-  font-size: 1.6em;
-  max-width: 50%;
-  text-align: center;
-  margin-bottom: 15px;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-}
-
-.cards-box .card:not(.hide) p:nth-of-type(4){
-  color: #ffff;
-  font-size: 0.9em;
-  font-weight: 300;
-  margin: 25px 0 10px 0;  
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-}
-
-.cards-box .card:not(.hide) button{
-    display: block;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0;
-    background: #199EBF;
-    border: none;
-    color: #ffff;
-    text-decoration: none;
-    padding: 15px 50px;
-    border-radius: 25px;
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../styles/header.module.css";
 import Logo from "../assets/img/logo.png";
 import teams from "../../public/teams";
+import resetIco from "../assets/icons/reset.svg";
 
 
 function Header() {
@@ -30,15 +31,20 @@ function Header() {
   }
 
   function updatePrice() {
-    var price = document.getElementById("priceRange").value;
+    const price = document.getElementById("priceRange").value;
     document.getElementById("selectedPrice").textContent = "$ " + price + ".00";
+  }
+
+  function resetData() {
+    sessionStorage.removeItem("events");
+    location.reload();
   }
 
   return (
     <header className={styles.header}>
       <div>
 
-        <section>
+        <section className="filterdatasection">
           <select name='event' className='eventtype' onChange={checkEvent}>
             <option value='nfl' default>NFL</option>
             <option value='nba' disabled>NBA</option>
@@ -49,12 +55,16 @@ function Header() {
  
           <select name='team' className='teamtype'></select>
           
-          <input type='number' className='ticketamouttype' value="1" min="1" max="8"/>
+          <input type='number' className='ticketamouttype' value="2" min="1" max="8"/>
          
          <div>
-          <input type='range' className='pricerange' id='priceRange' min='0' max='1000' step='1' onInput={updatePrice}/>
-          <span id='selectedPrice' className='pricetype'>$ 500.00</span> 
+          <input type='range' className='pricerange' id='priceRange' min='175' max='1200' step='1' onInput={updatePrice}/>
+          <span id='selectedPrice' className='pricetype'>$ 700.00</span> 
          </div>
+        </section>
+
+        <section className="resetdatasection displaynone">
+          <button onClick={resetData}><Image src={resetIco} alt="Reset Icon"/> Reset</button>
         </section>
 
         <section>
