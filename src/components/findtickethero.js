@@ -22,6 +22,7 @@ function Findtickethero() {
     } else {
       console.log("Events bestaat niet.");
     }
+
   });
 
   function searchTickets() {
@@ -183,7 +184,7 @@ function Findtickethero() {
 
               <section>
                 <p>$ ${randomPrice}.00 </p>
-                <button type="button" onclick="alert('${flippedEventName}')">Buy</button>
+                <button type="button" class="saveeventbtn">Buy</button>
               </section>
             </div>
           </div>
@@ -198,13 +199,46 @@ function Findtickethero() {
           .classList.add("nobackgroundimage");
         document.querySelector(".cards-box").innerHTML = html;
         window.scrollTo({ top: 0, behavior: "smooth" });
+
+        let allSaveBtns = document.querySelectorAll(".saveeventbtn");
+        console.log(allSaveBtns);
+
+        for (let i = 0; i < allSaveBtns.length; i++) {
+          allSaveBtns[i].addEventListener("click", (e) => {
+            const card = e.target.parentElement.parentElement;
+            let row = card.children[1].children[1].innerHTML;
+            let rowWord = row.split(" ");
+            rowWord.shift();
+            let newRow = rowWord.join(" ");
+            let seat = card.children[1].children[2].innerHTML;
+            let seatWord = seat.split(" ");
+            seatWord.shift();
+            let newSeat = seatWord.join(" ");
+
+            const savedEvent = {
+              date: card.firstElementChild.firstElementChild.innerHTML,
+              location: card.firstElementChild.children[1].innerHTML,
+              eventname: card.firstElementChild.children[2].innerHTML,
+              section: card.children[1].children[0].firstElementChild.innerHTML,
+              row: newRow,
+              seat: newSeat,
+              price: card.children[2].children[0].innerHTML,
+              imgurl: card.parentElement.style.backgroundImage,
+            };
+
+            const savedEventJSON = JSON.stringify(savedEvent);
+            sessionStorage.setItem("savedEvent", savedEventJSON);
+            
+            window.location = "/checkout";
+          });
+        }
       }
       loopTickets();
       putSectionBackgrounds();
       updateCardTransforms(sliderIndex);
     }, 500);
   }
-
+  
   function putSectionBackgrounds() {
     let sectionNumbers = document.querySelectorAll(".sectionnumber");
     let rowNumbers = document.querySelectorAll(".rownumber");

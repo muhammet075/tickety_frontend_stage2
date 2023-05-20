@@ -79,6 +79,7 @@ function Header() {
 
   function resetData() {
     sessionStorage.removeItem("events");
+    sessionStorage.removeItem("savedEvent");
     location.reload();
   }
 
