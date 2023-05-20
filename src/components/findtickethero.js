@@ -188,13 +188,12 @@ function Findtickethero() {
           </div>
         `;
         html += "";
-        document
-          .querySelector(".ticketresults")
-          .classList.remove("displaynone");
+        document.querySelector(".ticketresults") .classList.remove("displaynone");
         document.querySelector(".herosocials").classList.add("displaynone");
-        document
-          .querySelector(".ticketshero")
-          .classList.add("nobackgroundimage");
+        document.querySelector(".resetbtn").classList.remove("displaynone");
+        document.querySelector(".resetdatasection").lastElementChild.lastElementChild.innerHTML = "Reset";
+        document.querySelector(".resetdatasection").lastElementChild.firstElementChild.src = "/img/reset.svg";
+        document.querySelector(".ticketshero").classList.add("nobackgroundimage");
         document.querySelector(".cards-box").innerHTML = html;
         window.scrollTo({ top: 0, behavior: "smooth" });
 

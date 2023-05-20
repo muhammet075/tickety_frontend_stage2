@@ -164,6 +164,20 @@ html, body {
   font-size: 20px;
   margin-bottom: 5px;
   user-select: none;
+  position: relative;
+}
+
+.cards-box .card:not(.hide) > div > section:nth-of-type(3) p::after{
+    content: "Price per ticket";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    top: -14px;
+    font-size: 10px;
+    text-transform: uppercase;
 }
 
 .cards-box .card:not(.hide) > div > section:nth-of-type(3) p:nth-of-type(4){
@@ -261,7 +275,7 @@ html, body {
   } 
 
   .ticketresults {
-    top: 100px !important;
+    top: 130px !important;
   }
 }
 
@@ -501,6 +515,16 @@ html, body {
     font-weight: 400;
 }
 
+.checkoutticket > div > div p:nth-of-type(1)::after{
+    content: "Total price";
+    text-transform: uppercase;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    top: -15px;
+    font-weight: 700;
+}
+
 .checkoutticket > div > div p:nth-of-type(2){
     color: #ffff;
     position: absolute;
@@ -520,13 +544,13 @@ html, body {
 }
 
 .checkoutticket > div > h3{
-  margin: 15px 0 15px 5px;
+  margin: 15px 0 15px 10px;
   font-size: 16px;
   font-weight: 600;
 }
 
 .checkoutticket > div > p{
-  margin: 5px 0 0 5px;
+  margin: 5px 0 0 10px;
   font-size: 15px;
   font-weight: 500;
 }

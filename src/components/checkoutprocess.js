@@ -8,41 +8,55 @@ import basketIco from "../assets/icons/basket.svg";
 function Checkoutprocess() {
   useEffect(() => {
     const savedEventJSON = sessionStorage.getItem("savedEvent");
+    document.querySelector(".headercontent").classList.add("resetheader");
 
     if (savedEventJSON !== null) {
+      document
+        .querySelector(".resetdatasection")
+        .classList.remove("displaynone");
+      document.querySelector(".filterdatasection").classList.add("displaynone");
+      document.querySelector(".resetdatasection").lastElementChild.lastElementChild.innerHTML = "Remove Ticket";
+      document.querySelector(".resetdatasection").lastElementChild.firstElementChild.src = "/img/trash.svg";
+      document.querySelector(".baskettext").innerHTML =
+        "Select the event from the options below that you would like to purchase using Apple Pay.";
 
-    document.querySelector(".resetdatasection").classList.remove("displaynone");
-    document.querySelector(".filterdatasection").classList.add("displaynone");
-    document.querySelector(".resetdatasection").lastElementChild.lastElementChild.innerHTML = "Remove Ticket";
-    document.querySelector(".baskettext").innerHTML = "Select the event from the options below that you would like to purchase using Apple Pay.";
+      const getEvent = sessionStorage.getItem("savedEvent");
+      const showGetEvent = JSON.parse(getEvent);
 
-    const getEvent = sessionStorage.getItem("savedEvent");
-    const showGetEvent = JSON.parse(getEvent);
+      const date = showGetEvent.date;
+      const eventname = showGetEvent.eventname;
+      const location = showGetEvent.location;
+      const row = showGetEvent.row;
+      const seat = showGetEvent.seat;
+      const section = showGetEvent.section;
+      const imgurl = showGetEvent.imgurl;
 
-    const date = showGetEvent.date;
-    const eventname = showGetEvent.eventname;
-    const location = showGetEvent.location;
-    const price = showGetEvent.price;
-    const row = showGetEvent.row;
-    const seat = showGetEvent.seat;
-    const section = showGetEvent.section;
-    const imgurl = showGetEvent.imgurl;
+      var amount = showGetEvent.price;
+      var number = parseFloat(amount.replace("$ ", ""));
+      var multiplied = number * 2;
+      const price = "$ " + multiplied.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-    document.querySelector(".showdate").innerHTML = date;
-    document.querySelector(".showevent").innerHTML = eventname;
-    document.querySelector(".showlocation").innerHTML = location;
-    document.querySelector(".showprice").innerHTML = price;
-    document.querySelector(".showrow").innerHTML = row;
-    document.querySelector(".showseat").innerHTML = seat;
-    document.querySelector(".showsection").innerHTML = section;
-    document.querySelector(".backgroundeventticket").style.backgroundImage = imgurl;
 
+
+      console.log(price);
+
+      document.querySelector(".showdate").innerHTML = date;
+      document.querySelector(".showevent").innerHTML = eventname;
+      document.querySelector(".showlocation").innerHTML = location;
+      document.querySelector(".showprice").innerHTML = price;
+      document.querySelector(".showrow").innerHTML = row;
+      document.querySelector(".showseat").innerHTML = seat;
+      document.querySelector(".showsection").innerHTML = section;
+      document.querySelector(".backgroundeventticket").style.backgroundImage =
+        imgurl;
+      document.querySelector(".resetbtn").classList.remove("displaynone");
     } else {
         document.querySelector(".baskettext").innerHTML = "There are no events in your shopping cart. Please return to the home page to add an event.";
         document.querySelector(".filledstate").classList.add("displaynone");
         document.querySelector(".filterdatasection").classList.add("displaynone");
         document.querySelector(".resetdatasection").classList.remove("displaynone");
         document.querySelector(".emptystateticket").classList.remove("displaynone");
+        document.querySelector(".resetbtn").classList.add("displaynone");
     }
   });
 

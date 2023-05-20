@@ -123,7 +123,7 @@
 
 @media only screen and (max-width: 920px) {
      .findtickethero{
-        margin-top: 25px !important;
+        margin-top: 1px !important;
         min-height: 50vh;
         margin-bottom: 400px;
      }

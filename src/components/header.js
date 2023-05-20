@@ -16,25 +16,38 @@ function Header() {
   useEffect(() => {
     checkEvent();
 
-  let previousWindowWidth = window.innerWidth;
-  let isScreenWide = false;
+    var url = window.location.href;
 
-  function checkScreenWidth() {
-    let currentWindowWidth = window.innerWidth;
-    if (currentWindowWidth > 750 && !isScreenWide) {
-      isScreenWide = true;
-      document.querySelector(".hamburger").style.display = "block";
-      document.querySelector(".hamburgermenu").classList.remove("closehamburger");
-      document.querySelector(".hamburgermenu").classList.remove("openhamburger");
-    } else if (currentWindowWidth <= 750 && isScreenWide) {
-      isScreenWide = false;
-      document.querySelector(".hamburger").style.display = "none";
+    if (url.endsWith("/")) {
+        document.querySelector(".filterdatasection").classList.remove("displaynone");
+        document.querySelector(".resetdatasection").classList.add("displaynone");
+        document.querySelector(".headercontent").classList.remove("resetheader");
+    } else {
+      console.log("De URL eindigt niet op '/basket'.");
     }
-    previousWindowWidth = currentWindowWidth;
-  }
 
-  window.addEventListener("resize", checkScreenWidth);
+    let previousWindowWidth = window.innerWidth;
+    let isScreenWide = false;
 
+    function checkScreenWidth() {
+      let currentWindowWidth = window.innerWidth;
+      if (currentWindowWidth > 750 && !isScreenWide) {
+        isScreenWide = true;
+        document.querySelector(".hamburger").style.display = "block";
+        document
+          .querySelector(".hamburgermenu")
+          .classList.remove("closehamburger");
+        document
+          .querySelector(".hamburgermenu")
+          .classList.remove("openhamburger");
+      } else if (currentWindowWidth <= 750 && isScreenWide) {
+        isScreenWide = false;
+        document.querySelector(".hamburger").style.display = "none";
+      }
+      previousWindowWidth = currentWindowWidth;
+    }
+
+    window.addEventListener("resize", checkScreenWidth);
   });
 
   function checkEvent(){
@@ -84,6 +97,12 @@ function Header() {
     window.location = "/"
   }
 
+  function navigateHamburger(){
+    // document.querySelector(".hamburger").style.display = "none";
+    document.querySelector(".hamburgermenu").classList.add("closehamburger");
+    document.querySelector(".hamburgermenu").classList.remove("openhamburger");
+  }
+
   return (
     <header className={styles.header}>
       <div className="headercontent">
@@ -108,7 +127,7 @@ function Header() {
         </section>
 
         <section className="resetdatasection displaynone">
-          <button onClick={resetData}><Image src={resetIco} alt="Reset Icon"/> <span>Reset</span></button>
+          <button className="resetbtn" onClick={resetData}><Image src={resetIco} alt="Reset Icon"/> <span>Reset</span></button>
         </section>
 
         <section>
@@ -119,9 +138,9 @@ function Header() {
 
         <section className="hamburger">
           <div className="hamburgermenu">
-            <Link href="/basket" onClick={closeHamburger}><Image src={basketIco} alt="Basket icon"/> Basket</Link>
-            <Link href="#" onClick={closeHamburger}><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
-            <Link href="#" onClick={closeHamburger}><Image src={languageIco} alt="Language icon"/> En</Link>
+            <Link href="/basket" onClick={navigateHamburger}><Image src={basketIco} alt="Basket icon"/> Basket</Link>
+            <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
+            <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
           </div>
           <div onClick={closeHamburger}>
             <div>
