@@ -108,26 +108,13 @@ function Findtickethero() {
         const priceRangeElement = document.querySelector(".pricerange");
         const selectedPriceRange = parseInt(priceRangeElement.value, 10);
         const maxPrice = selectedPriceRange;
-        const randomPrice =
-          Math.floor(Math.random() * (maxPrice - 175 + 1)) + 175;
-        const randomRow = String(Math.floor(Math.random() * 20) + 1).padStart(
-          2,
-          "0"
-        );
-        const randomSeats = String(Math.floor(Math.random() * 18) + 1).padStart(
-          2,
-          "0"
-        );
-        const randomSeatsSecond = String(Number(randomSeats) + 1).padStart(
-          2,
-          "0"
-        );
+        const randomPrice = Math.floor(Math.random() * (maxPrice - 175 + 1)) + 175;
+        const randomRow = String(Math.floor(Math.random() * 20) + 1).padStart(2,"0");
+        const randomSeats = String(Math.floor(Math.random() * 18) + 1).padStart(2,"0");
+        const randomSeatsSecond = String(Number(randomSeats) + 1).padStart(2,"0");
         let priceRatio = randomPrice / parseInt(randomSection);
-
         const date = new Date(storedEvents[i].date);
-        const month = date
-          .toLocaleString("default", { month: "short" })
-          .replace(/^(.)/, (c) => c.toUpperCase());
+        const month = date.toLocaleString("default", { month: "short" }).replace(/^(.)/, (c) => c.toUpperCase());
         const day = date.getDate();
         const dayOfWeek = date.toLocaleString("en-US", { weekday: "short" });
         const formattedDate = `${month} ${day} - ${dayOfWeek}`;
@@ -138,12 +125,7 @@ function Findtickethero() {
         const time = new Date();
         time.setHours(hours);
         time.setMinutes(minutes);
-        const formattedTime = time.toLocaleString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: true,
-        });
-
+        const formattedTime = time.toLocaleString("en-US", {hour: "2-digit", minute: "2-digit", hour12: true,});
         const eventName = storedEvents[i].event_name.replace(/\./g, "");
         const separators = [" vs ", " Vs ", " v "];
         let separator = null;
