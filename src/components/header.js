@@ -97,7 +97,7 @@ function Header() {
  
           <select name='team' className='teamtype'></select>
           
-          <input type='number' className='ticketamouttype' value="2" min="1" max="8"/>
+          <input type='number' pattern="[0-9]*" className='ticketamouttype' value="2" min="1" max="8"/>
          
          <div>
           <input type='range' className='pricerange' id='priceRange' min='175' max='1200' step='1' onInput={updatePrice}/>
