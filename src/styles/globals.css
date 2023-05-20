@@ -189,7 +189,12 @@ html, body {
   }
 }
 
+
 @media only screen and (max-width: 900px) {
+  .cards-box {
+    margin-top: 250px;
+  } 
+
   .cards-box .card {
     width: 80%;
     height: 300px;
@@ -228,13 +233,22 @@ html, body {
 }
 
 @media only screen and (max-width: 810px) {
+  .cards-box {
+    margin-top: 200px;
+  } 
+
   .ticketresults {
     top: 100px !important;
   }
 }
 
 
+
 @media only screen and (max-width: 650px) {
+  .cards-box {
+    margin-top: 150px;
+  } 
+
   .cards-box .card {
     width: 90%;
     height: 250px;
