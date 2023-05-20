@@ -183,7 +183,7 @@ function Findtickethero() {
 
               <section>
                 <p>$ ${randomPrice}.00 </p>
-                <button type="button" onclick="alert('test')">Buy</button>
+                <button type="button" onclick="alert('${flippedEventName}')">Buy</button>
               </section>
             </div>
           </div>
