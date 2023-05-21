@@ -573,7 +573,22 @@ html, body {
   font-weight: 500;
 }
 
-.checkoutticket > div > button{
+.checkoutticket > div > button:nth-of-type(1){
+    position: absolute;
+    top: -35px;
+    right: -14px;
+    background: none;
+    border: none;
+    height: auto;
+    cursor: pointer;
+}
+
+.checkoutticket > div > button:nth-of-type(1) img{
+  width: 40px;
+  height: auto;
+}
+
+.checkoutticket > div > button:last-child{
   width: 90%;
   display: block;
   background-color: #000;
@@ -588,9 +603,9 @@ html, body {
   cursor: pointer;
 }
 
-.checkoutticket > div > button:hover{
+.checkoutticket > div > button:last-child:hover{
   background-color: #434343;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .checkoutticket > div > button img{
