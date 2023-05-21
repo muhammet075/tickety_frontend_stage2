@@ -10,6 +10,7 @@ import basketIco from "../assets/icons/basket.svg";
 import languageIco from "../assets/icons/language.svg";
 import hamburgerIco from "../assets/icons/hamburger.svg";
 import closeIco from "../assets/icons/white-close.svg";
+import homeIco from "../assets/icons/home.svg";
 
 
 function Header() {
@@ -97,8 +98,17 @@ function Header() {
     window.location = "/"
   }
 
-  function navigateHamburger(){
+  function navigateMobile(event){
 
+    let url = event.currentTarget.value;
+
+    if (url === "home"){
+      window.location = "/";
+    } else if (url === "basket"){
+      window.location = "/basket";
+    } else {
+      window.location = "/";
+    }
   }
 
   return (
@@ -136,9 +146,16 @@ function Header() {
 
         <section className="hamburger">
           <div className="hamburgermenu">
-            <Link href="/basket" onClick={navigateHamburger}><Image src={basketIco} alt="Basket icon"/> Basket</Link>
+            <Link href="/basket"><Image src={basketIco} alt="Basket icon"/> Basket</Link>
             <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
             <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
+            <div className="mobilemenu">
+              <button value="home" onClick={navigateMobile}><Image src={homeIco} alt="Home icon"/> <span>Home</span></button>
+              <button value="basket" onClick={navigateMobile}><Image src={basketIco} alt="Basket icon"/> <span>Basket</span></button>
+              <button onClick={navigateMobile}><Image src={userIco} alt="Sign in icon"/> <span>Sign In</span></button>
+              <button onClick={navigateMobile}><Image src={languageIco} alt="Language icon"/> <span>En</span></button>
+            </div>
+
           </div>
           <div className="closinghamburger" onClick={closeHamburger}>
             <div>
