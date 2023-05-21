@@ -16,8 +16,14 @@ function Findtickethero() {
 
   useEffect(() => {
     const storedEvents = JSON.parse(sessionStorage.getItem("events"));
+    document.querySelector(".ticketresults").classList.add("displaynone");
+    document.querySelector(".herosocials").classList.add("displaynone")
 
     if (storedEvents) {
+      document.querySelector(".loadingstate").classList.remove("displaynone");
+      document.querySelector(".ticketshero").classList.add("nobackgroundimage");
+      document.querySelector(".searchcontainer").classList.add("displaynone");
+
       createTickets();
     } else {
       console.log("Events bestaat niet.");
@@ -65,6 +71,7 @@ function Findtickethero() {
   }
 
   function createTickets() {
+    document.querySelector(".loadingstate").classList.remove("displaynone");
     setTimeout(function () {
       document.querySelector(".resetdatasection").classList.remove("displaynone");
       document.querySelector(".filterdatasection").classList.add("displaynone");
@@ -170,6 +177,7 @@ function Findtickethero() {
           </div>
         `;
         html += "";
+        document.querySelector(".loadingstate").classList.add("displaynone");
         document.querySelector(".ticketresults") .classList.remove("displaynone");
         document.querySelector(".herosocials").classList.add("displaynone");
         document.querySelector(".resetbtn").classList.remove("displaynone");
@@ -215,7 +223,7 @@ function Findtickethero() {
       loopTickets();
       putSectionBackgrounds();
       updateCardTransforms(sliderIndex);
-    }, 500);
+    }, 1500);
   }
   
   function putSectionBackgrounds() {
@@ -333,14 +341,28 @@ function Findtickethero() {
       </section>
 
       <section className='ticketresults displaynone'>
-        
-        <button onClick={closeChangedView} className="closechangedview displaynone"><Image src={closeIco} alt="Close Icon"/></button>
+        <button
+          onClick={closeChangedView}
+          className='closechangedview displaynone'
+        >
+          <Image src={closeIco} alt='Close Icon' />
+        </button>
         <div class='cards-box'></div>
-        <div className="buttonsnavigation">
-          <button onClick={nextTickets} className='next-button'><Image src={leftIco} alt="Left icon"/></button>
-          <button onClick={changeTicketsViews} className="changeticketviesbtn">8 Events</button>
-          <button onClick={prevTickets} className='prev-button'><Image src={rightIco} alt="Right icon"/></button>
+        <div className='buttonsnavigation'>
+          <button onClick={nextTickets} className='next-button'>
+            <Image src={leftIco} alt='Left icon' />
+          </button>
+          <button onClick={changeTicketsViews} className='changeticketviesbtn'>
+            8 Events
+          </button>
+          <button onClick={prevTickets} className='prev-button'>
+            <Image src={rightIco} alt='Right icon' />
+          </button>
         </div>
+      </section>
+
+      <section className="loadingstate displaynone">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
       </section>
 
       <section className='herosocials'>
