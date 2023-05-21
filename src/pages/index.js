@@ -15,12 +15,12 @@ export default function Home() {
         <meta name='description' content='Tickety App' />
       </Head>
       <Findtickethero />
-      {/* <Hero/>
-      <Partners/>
-      <Ticketscontainer/>
-      <NextEvents/>
-      <EventsSchedule/>
-      <Countings/> */}
+      {/* <Hero/> */}
+      {/* <Partners/> */}
+      {/* <Ticketscontainer/> */}
+      {/* <NextEvents/> */}
+      {/* <EventsSchedule/> */}
+      {/* <Countings/> */}
     </div>
   );
 }
