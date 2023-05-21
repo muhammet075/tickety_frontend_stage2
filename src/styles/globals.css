@@ -56,7 +56,20 @@ html, body {
   }
 }
 
+.container{
+  max-width: 1100px;
+  margin: 50px auto;
+}
 
+.container h1{
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 1115px) {
+  .container{
+    padding: 0 15px;
+  }
+}
 
 .cards-box {
 	position: relative;

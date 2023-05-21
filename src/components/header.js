@@ -106,6 +106,8 @@ function Header() {
       window.location = "/";
     } else if (url === "basket"){
       window.location = "/basket";
+    } else if (url === "signin"){
+      window.location = "/signin"
     } else {
       window.location = "/";
     }
@@ -147,13 +149,13 @@ function Header() {
         <section className="hamburger">
           <div className="hamburgermenu">
             <Link href="/basket"><Image src={basketIco} alt="Basket icon"/> Basket</Link>
-            <Link href="#"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
+            <Link href="/signin"><Image src={userIco} alt="Sign in icon"/> Sign In</Link>
             <Link href="#"><Image src={languageIco} alt="Language icon"/> En</Link>
             <div className="mobilemenu">
               <button value="home" onClick={navigateMobile}><Image src={homeIco} alt="Home icon"/> <span>Home</span></button>
               <button value="basket" onClick={navigateMobile}><Image src={basketIco} alt="Basket icon"/> <span>Basket</span></button>
-              <button onClick={navigateMobile}><Image src={userIco} alt="Sign in icon"/> <span>Sign In</span></button>
-              <button onClick={navigateMobile}><Image src={languageIco} alt="Language icon"/> <span>En</span></button>
+              <button value="signin" onClick={navigateMobile}><Image src={userIco} alt="Sign in icon"/> <span>Sign In</span></button>
+              <button value="language" onClick={navigateMobile}><Image src={languageIco} alt="Language icon"/> <span>En</span></button>
             </div>
 
           </div>
