@@ -11,7 +11,12 @@ function Checkoutprocess() {
     document.querySelector(".headercontent").classList.add("resetheader");
 
     if (savedEventJSON !== null) {
+        document.querySelector(".loadingstate").classList.remove("displaynone");
+
+        setTimeout(function () {
+        document.querySelector(".loadingstate").classList.add("displaynone");
         document.querySelector(".resetdatasection").classList.remove("displaynone");
+        document.querySelector(".showprice").classList.remove("displaynone");
         document.querySelector(".filterdatasection").classList.add("displaynone");
         document.querySelector(".resetdatasection").lastElementChild.lastElementChild.innerHTML = "Remove Ticket";
         document.querySelector(".resetdatasection").lastElementChild.firstElementChild.src = "/img/trash.svg";
@@ -41,6 +46,7 @@ function Checkoutprocess() {
         document.querySelector(".showsection").innerHTML = section;
         document.querySelector(".backgroundeventticket").style.backgroundImage = imgurl;
         document.querySelector(".resetbtn").classList.remove("displaynone");
+        }, 500);
     } else {
         document.querySelector(".baskettext").innerHTML = "There are no events in your shopping cart. Please return to the home page to add an event.";
         document.querySelector(".filledstate").classList.add("displaynone");
@@ -57,6 +63,7 @@ function Checkoutprocess() {
         
   return (
     <div className={styles.checkoutprocess}>
+
       <div>
         <section>
           <h1>Basket</h1>
@@ -68,7 +75,7 @@ function Checkoutprocess() {
         <div className='checkoutticket filledstate'>
           <div>
             <div className='backgroundeventticket'>
-              <p className='showprice'></p>
+              <p className='showprice displaynone'></p>
               <p className='showdate'></p>
               <p className='showlocation'></p>
             </div>
@@ -88,9 +95,12 @@ function Checkoutprocess() {
             </Link>
           </div>
         </div>
-
-
       </div>
+        
+        <section className="loadingstate displaynone">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </section>
+
     </div>
   );
 }
