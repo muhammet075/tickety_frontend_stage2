@@ -37,9 +37,6 @@ function Checkoutprocess() {
       const price = "$ " + multiplied.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 
-
-      console.log(price);
-
       document.querySelector(".showdate").innerHTML = date;
       document.querySelector(".showevent").innerHTML = eventname;
       document.querySelector(".showlocation").innerHTML = location;
@@ -47,8 +44,7 @@ function Checkoutprocess() {
       document.querySelector(".showrow").innerHTML = row;
       document.querySelector(".showseat").innerHTML = seat;
       document.querySelector(".showsection").innerHTML = section;
-      document.querySelector(".backgroundeventticket").style.backgroundImage =
-        imgurl;
+      document.querySelector(".backgroundeventticket").style.backgroundImage = imgurl;
       document.querySelector(".resetbtn").classList.remove("displaynone");
     } else {
         document.querySelector(".baskettext").innerHTML = "There are no events in your shopping cart. Please return to the home page to add an event.";
@@ -69,7 +65,7 @@ function Checkoutprocess() {
     <div className={styles.checkoutprocess}>
       <div>
         <section>
-          <h1><Image src={basketIco} alt="Basket Icon"/> Basket</h1>
+          <h1>Basket</h1>
           <p className="baskettext"></p>
         </section>
 
